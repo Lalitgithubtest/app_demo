@@ -1,52 +1,32 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:temporary3/MYCARDS.dart';
+import 'package:temporary3/APPBAR.dart';
+import 'package:temporary3/homepage.dart';
 
-void main() {
+import 'MYCARDS.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(Myapp());
 }
 
-class Myapp extends StatelessWidget {
+class Myapp extends StatefulWidget {
   const Myapp({super.key});
 
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
-    );
-  }
-}
-
-class Homepage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color(0xff545567), Color(0xff545570)],
-            )),
-          ),
-
-
-
-          Column(
-            children: [
-              Myapp(),
-              Mycards(
-                  color1: Color(0xffffca51),
-                  color2: Color(0xffff7c03),
-                  country: "New York",
-                  imageUrl:"assets/sunny.png",
-                  weathercondition:"Sunny",
-            ],
-          ),
-        ],
-      ),
+      home: HomePage(),
     );
   }
 }

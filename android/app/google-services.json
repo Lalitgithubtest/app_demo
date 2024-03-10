@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601373049354",
+    "project_id": "temporary3",
+    "storage_bucket": "temporary3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601373049354:android:3d13fe44e8cb9e8a7d95f3",
+        "android_client_info": {
+          "package_name": "com.example.temporary3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGpuPSxP1svkboeGj4trJ-exIc5Y5ZxXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
